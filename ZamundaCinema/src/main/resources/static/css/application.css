@@ -1,57 +1,33 @@
-@CHARSET "ISO-8859-1";
-
-html {
-	height: 100%;
-	box-sizing: border-box;
-	box-sizing: inherit;
-}
-
 body {
-	position: relative;
-	margin: 0;
-	padding-bottom: 6rem;
-	min-height: 100%;
+	text-align: center;
+	/* This is a hack for older browsers to center the page */
 }
 
-.mainmenu-area {
-	background: none repeat scroll 0 0 #eaf1f6;
-	width: 100%;
-	z-index: 999;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.centerLayout {
+	/* We use a class for this since we're using it in several places */
+	margin: 0 auto; /* This centers the page in modern browsers */
+	text-align: left;
+	/* This is a hack for older browsers to center the page */
+	width: 960px; /* This sets our total page width */
 }
 
-.mainmenu-area ul.navbar-nav li.active a {
-	background: #0018a8;
-	color: #fff;
+#navigation li {
+	float: left; /* Floating also makes our navigation display in a line */
 }
 
-.mainmenu-area ul.navbar-nav li ul.dropdown-menu li a:hover {
-	color: #337ab7;
-	background: #eee;
+#content {
+	float: left; /* This causes the content to move to the left */
+	width: 700px;
+	/* We need to set the width whenever we float an element */
 }
 
-.mainmenu-area ul.navbar-nav li ul.dropdown-menu li a:hover {
-	color: #337ab7;
-	background: #eee;
+#sidebar {
+	float: left; /* This causes the sidebar to move to the left */
+	width: 260px;
+	/* We need to set the width whenever we float an element */
 }
 
-.mainmenu-area ul.navbar-nav li ul.dropdown-menu {
-	background: #eee;
-	color: #eee;
-	border: 0px;
-	outline: 0px;
+#footer {
+	clear: both;
+	/* This makes sure that the footer clears both the sidebar and content floats */
 }
-
-.mainmenu-area ul.navbar-nav li.dropdown.active.open ul.dropdown-menu {
-	background: #0018a8;
-	color: #0018a8;
-	border: 0px;
-	outline: 0px;
-}
-
-.mainmenu-area ul.navbar-nav li.dropdown.active.open ul.dropdown-menu li a:hover
-	{
-	color: #337ab7;
-	background: #0018a8;
-}
-
