@@ -14,14 +14,18 @@
 
 <!-- Google Fonts -->
 <link
-	th:href='@{http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600}'
+	th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700}'
 	rel='stylesheet' type='text/css' />
-<link
-	th:href='@{http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300}'
-	rel='stylesheet' type='text/css' />
-<link
-	th:href='@{http://fonts.googleapis.com/css?family=Raleway:400,100}'
-	rel='stylesheet' type='text/css' />
+
+<!-- <link -->
+<!-- 	th:href='@{http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600}' -->
+<!-- 	rel='stylesheet' type='text/css' /> -->
+<!-- <link -->
+<!-- 	th:href='@{http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300}' -->
+<!-- 	rel='stylesheet' type='text/css' /> -->
+<!-- <link -->
+<!-- 	th:href='@{http://fonts.googleapis.com/css?family=Raleway:400,100}' -->
+<!-- 	rel='stylesheet' type='text/css' /> -->
 
 <!-- Bootstrap -->
 <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
@@ -33,9 +37,9 @@
 <!-- 	th:href="@{http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css}" /> -->
 
 <!-- Custom CSS -->
-<link rel="stylesheet" th:href="@{/css/owl.carousel.css}" />
-<link rel="stylesheet" th:href="@{/css/applications.css}" />
-<link rel="stylesheet" th:href="@{/css/responsive.css}" />
+<link rel="stylesheet" th:href="@{/css/application.css}" />
+<link rel="stylesheet" th:href="@{/css/stretchy-navigation-reset.css}" />
+<link rel="stylesheet" th:href="@{/css/stretchy-navigation-style.css}" />
 
 <!-- Font Awesome -->
 <link rel="stylesheet" th:href="@{/css/font-awesome.css}" />
@@ -58,85 +62,20 @@
     <![endif]-->
 </head>
 <body>
-	<!-- End header area -->
+	<nav class="cd-stretchy-nav">
+		<a class="cd-nav-trigger" href="#0"> Menu <span aria-hidden="true"></span>
+		</a>
 
-	<div class="site-branding-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="page-logo">
-						<div class="header--logo">
-							<br /> <br /> <b style="font-size: 20px;">Deutsche Bank</b><br />
-							<br /> <a style="font-size: 20px;" href="#">OKCF Control
-								Center</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="logoRight">
-						<span class="font-grey-salsa">Angemeldet als : John Doe <br />
-							Letze Anmeldung : 02.03.2016
-						</span><br /> <a class="btn btn-xs btn-primary" href="#"><i
-							class="fa fa-sign-out" aria-hidden="true">Abmelden</i></a>
-					</div>
-				</div>
+		<ul>
+			<li><a th:href="@{/home}" th:classappend="${curr=='home'} ? active : ''"><span>Home</span></a></li>
+			<li><a th:href="@{/halls}" th:classappend="${curr=='halls'} ? active : ''"><span>Portfolio</span></a></li>
+			<li><a href="#0"><span>Services</span></a></li>
+			<li><a href="#0"><span>Store</span></a></li>
+			<li><a href="#0"><span>Contact</span></a></li>
+		</ul>
 
-			</div>
-		</div>
-	</div>
-	<!-- End site branding area -->
-
-	<div class="mainmenu-area">
-		<div class="container">
-			<div class="row">
-				<div class="navbar-header">
-					<button type="button" class="pull-left navbar-toggle"
-						data-toggle="collapse" data-target="#example-navbar-collapse">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				</div>
-
-				<div class="collapse navbar-collapse" id="example-navbar-collapse">
-
-					<ul class="nav navbar-nav ">
-						<li th:classappend="${curr=='home'} ? active : ''"><a
-							th:href="@{/home}">Home</a></li>
-
-						<li class="dropdown "
-							th:classappend="${curr=='product' || curr=='agent' || curr=='prizeTable' } ? active : '' "><a
-							href="#" class="dropdown-toggle" data-toggle="dropdown">
-								Bearbeiten <b class="caret"></b>
-						</a>
-
-							<ul class="dropdown-menu ">
-								<li><a th:href="@{/edit/agent}"> <i
-										class="fa fa-user fa-dropdown fa-2x" aria-hidden="true"></i>
-										Vermittler
-								</a></li>
-								<li><a th:href="@{/edit/product}"> <i
-										class="fa fa-file fa-dropdown" aria-hidden="true"></i> Produkt
-								</a></li>
-								<li><a th:href="@{/edit/prizeTable}">Preistabelle</a></li>
-							</ul></li>
-
-						<li class="dropdown"
-							th:classappend="${curr=='allocations'} ? active : '' "><a
-							href="#" class="dropdown-toggle" data-toggle="dropdown">
-								Anzeigen <b class="caret"></b>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a th:href="@{/show/allocations}">Allocations</a></li>
-							</ul></li>
-						<li th:classappend="${curr=='release'} ? active : ''"><a
-							th:href="@{/release/showRelease}">Freigabe</a></li>
-
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+		<span aria-hidden="true" class="stretchy-nav-bg"></span>
+	</nav>
 	<!-- End mainmenu area -->
 
 	<div class="product-big-title-area">
@@ -159,24 +98,13 @@
 		</div>
 	</div>
 
-	<div class="footerAtBottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
-					<div class="copyright">
-						<p>
-							2016 &copy; by Deutsche Bank AG <a
-								href="http://www.deutsche-bank.de" target="_blank">Deutsche
-								Bank</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- Latest jQuery form server -->
+	<script th:src="@{/js/jquery-2.1.4.js}"></script>
+	<!-- 	<script th:src="@{/js/jquery.min.js}"></script> -->
 
-	<script th:src="@{/js/jquery.min.js}"></script>
+	<!-- 	Stretchy-navigation -->
+	<script th:src="@{/js/stretchy-navigation.js}"></script>
+
 
 	<!-- Bootstrap JS form CDN -->
 	<script th:src="@{/js/bootstrap.min.js}"></script>
