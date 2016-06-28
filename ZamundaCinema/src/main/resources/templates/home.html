@@ -3,73 +3,41 @@
 	xmlns:th="http://www.thymeleaf.org" th:include="layout :: page(curr='home')"> 
 <!-- 	this is the param wich is like id of the page -->
 <head>
-<title></title>
+<title>kurchence</title>
 </head>
 <body>
+	<div class="container">
+		<div class="jumbotron">
+			<header>
+				<div th:fragment="title">
+					<h2>Home</h2>
+				</div>
+			</header>
+	  	
+			<div th:fragment="content" >
+				
+				<h1>Cinema</h1>
 
-	<div th:fragment="title">
-		<h1>
-			<span> Home </span> <small> Homepage </small>
-		</h1>
-	</div>
 
-	<div th:fragment="content" style="height: 100%">
-		<!-- 		<h1>Home page</h1> -->
-		<h1>Cinema</h1>
-	</div>
+				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet dolor erat. Vestibulum in velit bibendum, consectetur dui eget, dictum odio. Vivamus eleifend laoreet consectetur. Aliquam in ipsum eros. Sed consequat tincidunt lacinia. In hac habitasse platea dictumst. Integer ornare justo at odio bibendum iaculis. Maecenas vel libero ut elit auctor semper. Nulla facilisi. Nam vitae accumsan quam. Aenean eu neque lobortis, tincidunt erat ac, condimentum justo. Vivamus mattis sodales nisi sed rutrum. Vivamus vestibulum neque elementum urna lacinia dapibus. Etiam fermentum hendrerit enim, consectetur ultrices nibh auctor sodales.
+
+				Mauris faucibus eleifend nisl ut aliquet. Nullam a est dolor. Sed a enim tincidunt, molestie nisl non, ullamcorper nisi. Cras vitae lobortis odio, blandit iaculis nisi. Duis quis commodo quam, eu luctus eros. Aenean purus mauris, scelerisque at quam at, egestas tincidunt augue. Suspendisse potenti. Vestibulum vel tellus eget nulla ultrices ornare. Curabitur ultricies congue diam sed rhoncus.</p>
+
+				<footer>
+					fucking footer
+				</footer>
+			</div>
+	
+		</div>
+		
+		
+		
+	</div>	
+	
+	
 	<div th:fragment="scripts">
 		<script>
-		
-// 		JQUERY n stuff goes here
-		
-// 		$(function() {
-// 			// 6 create an instance when the DOM is ready
-// 			$.jstree.defaults.core.themes.variant = "large";
-// 			$('#jstree').jstree({
-// 				"core" : {
-
-// 					"themes" : {
-// 						"variant" : "large"
-// 					},
-// 					"data" : {
-// 						'url' : 'http://localhost:8088/getHi',
-// 						"dataType" : "json"
-// 					}
-// 				},
-// 				"checkbox" : {
-// 					"keep_selected_style" : false
-// 				},
-// 				"plugins" : [ "wholerow", "checkbox" ]
-// 			});
-// 			// 7 bind to events triggered on the tree
-// 			$('#jstree').on("changed.jstree", function(e, data) {
-// 				debugger;
-// 				console.log(data.selected);
-// 			});
-
-// 			// 8 interact with the tree - either way is OK
-// 			$('button')
-// 					.on(
-// 							'click',
-// 							function() {
-// 								$
-// 										.ajax({
-// 											url : 'http://localhost:8088/getHi2',
-// 											type : 'GET',
-// 											dataType : 'json',
-// 											success : function(data) {
-// 												$('#jstree').jstree(true).settings.core.data = data;
-// 												$('#jstree').jstree(true)
-// 														.refresh();
-// 											},
-// 											error : function(request, error) {
-// 												alert("Request: "
-// 														+ JSON
-// 																.stringify(request));
-// 											}
-// 										});
-// 							});
-// 		});
+			// JQUERY n stuff goes here
 		</script>
 	</div>
 </body>
