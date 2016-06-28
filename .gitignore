@@ -18,3 +18,5 @@ target
 .springBeans
 .metadata
 Servers
+.recommenders
+.classpath
