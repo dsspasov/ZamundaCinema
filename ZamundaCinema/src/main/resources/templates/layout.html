@@ -161,7 +161,7 @@
 
 	<script>
 		(function(w, $) {
-			window.onclick = function() {
+			window.displayMovie = function() {
 				var url = '<span th:text="@{/getFilm( filmId = 2)}" th:remove="tag"></span>'
 						.split('amp;').join('');
 				window.location.href = url;

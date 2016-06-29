@@ -13,7 +13,7 @@ import com.zamunda.cinema.model.Hall;
 import com.zamunda.cinema.service.UserService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/home")
 public class HomeController {
 	
 	@Autowired
