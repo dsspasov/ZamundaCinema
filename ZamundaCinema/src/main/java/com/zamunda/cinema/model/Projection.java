@@ -3,43 +3,50 @@ package com.zamunda.cinema.model;
 import org.joda.time.DateTime;
 
 public class Projection {
-	private Long id;
-	private DateTime startOfProjection;
-	private DateTime endOfProjection;
-	private Long hallId;
-	private Long filmId;
-	
-	public Long getId() {
+	private int id;
+	private int hallId;
+	private int movieId;
+	private DateTime startTime;
+	private DateTime endTime;
+
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+
+	public void setId(int id) {
 		this.id = id;
 	}
-	public DateTime getStartOfProjection() {
-		return startOfProjection;
-	}
-	public void setStartOfProjection(DateTime startOfProjection) {
-		this.startOfProjection = startOfProjection;
-	}
-	public DateTime getEndOfProjection() {
-		return endOfProjection;
-	}
-	public void setEndOfProjection(DateTime endOfProjection) {
-		this.endOfProjection = endOfProjection;
-	}
-	public Long getHallId() {
+
+	public int getHallId() {
 		return hallId;
 	}
-	public void setHallId(Long hallId) {
+
+	public void setHallId(int hallId) {
 		this.hallId = hallId;
 	}
-	public Long getFilmId() {
-		return filmId;
+
+	public int getMovieId() {
+		return movieId;
 	}
-	public void setFilmId(Long filmId) {
-		this.filmId = filmId;
+
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
 	}
-	
-	
+
+	public DateTime getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(DateTime startTime) {
+		this.startTime = startTime;
+	}
+
+	public DateTime getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(DateTime endTime) {
+		this.endTime = endTime;
+	}
 
 }

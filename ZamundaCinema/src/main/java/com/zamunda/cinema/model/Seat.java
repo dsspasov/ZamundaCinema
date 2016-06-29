@@ -1,6 +1,7 @@
 package com.zamunda.cinema.model;
 
 public class Seat {
+	private long id;
 	private int row;
 	private int column;
 	private int status;
@@ -27,6 +28,14 @@ public class Seat {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

@@ -1,15 +1,11 @@
 package com.zamunda.cinema.model;
 
-import java.util.List;
-
 import org.joda.time.Minutes;
 
 public class Film {
-	private Long id;
+	private long id;
 	private String name;
 	private Minutes length;
-	private String description;
-	private List<String> types;
 
 	public Long getId() {
 		return id;
@@ -33,22 +29,6 @@ public class Film {
 
 	public void setLength(Minutes length) {
 		this.length = length;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public List<String> getTypes() {
-		return types;
-	}
-
-	public void setTypes(List<String> types) {
-		this.types = types;
 	}
 
 }

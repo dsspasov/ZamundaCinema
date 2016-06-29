@@ -10,21 +10,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.zamunda.cinema.model.Film;
 import com.zamunda.cinema.model.Hall;
+import com.zamunda.cinema.repository.ReservationRepository;
 import com.zamunda.cinema.service.UserService;
 
 @Controller
 @RequestMapping("/home")
 public class HomeController {
-	
+
 	@Autowired
 	public UserService us;
+	@Autowired
+	public ReservationRepository reservationRepo;
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home(Model model) {
-
+	public String home(Model model, int id) {
+		reservationRepo.getAllReservationsForProjection(id);
 		return "home";
 	}
-	
+
 	@RequestMapping(value = "/halls", method = RequestMethod.GET)
 	public String halls(Model model) {
 
@@ -36,14 +39,13 @@ public class HomeController {
 		List<Hall> listOfHalls = us.getHalls();
 		return "edit/prizeTable";
 	}
-	
+
 	@RequestMapping(value = "/getFilm", method = RequestMethod.GET)
 	public String getFilm(Model model, Long filmId) {
 		Film film = us.getFilmById(filmId);
 		model.addAttribute("film", film);
 		return "displayFilm";
 	}
-	
 
 	@RequestMapping(value = "/addPrizeTable", method = RequestMethod.POST)
 	public String addPrizeTable(Model model, Object tableData) {

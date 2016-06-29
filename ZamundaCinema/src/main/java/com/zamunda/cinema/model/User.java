@@ -9,11 +9,12 @@ public class User implements UserDetailsService {
 	private Long id;
 
 	// and much more
-	public Long getId() {
+
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
