@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.zamunda.cinema.model.Film;
 import com.zamunda.cinema.model.Hall;
 import com.zamunda.cinema.service.UserService;
 
@@ -35,6 +36,14 @@ public class HomeController {
 		List<Hall> listOfHalls = us.getHalls();
 		return "edit/prizeTable";
 	}
+	
+	@RequestMapping(value = "/getFilm", method = RequestMethod.GET)
+	public String getFilm(Model model, Long filmId) {
+		Film film = us.getFilmById(filmId);
+		model.addAttribute("film", film);
+		return "displayFilm";
+	}
+	
 
 	@RequestMapping(value = "/addPrizeTable", method = RequestMethod.POST)
 	public String addPrizeTable(Model model, Object tableData) {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.zamunda.cinema.model.Film;
 import com.zamunda.cinema.model.Hall;
 import com.zamunda.cinema.repository.UserRepository;
 
@@ -26,6 +27,12 @@ public class UserServiceImp implements UserService{
 	public List<Hall> getHalls() {
 		// TODO Auto-generated method stub
 		return ur.getHalls();
+	}
+
+	@Override
+	public Film getFilmById(Long filmId) {
+		// TODO Auto-generated method stub
+		return ur.getFilmById(filmId);
 	}
 
 }
