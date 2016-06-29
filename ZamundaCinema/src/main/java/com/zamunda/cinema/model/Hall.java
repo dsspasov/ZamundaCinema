@@ -3,7 +3,7 @@ package com.zamunda.cinema.model;
 import java.util.List;
 
 public class Hall {
-	private Long id;
+	private long id;
 	private String name;
 	private List<Seat> seats;
 
