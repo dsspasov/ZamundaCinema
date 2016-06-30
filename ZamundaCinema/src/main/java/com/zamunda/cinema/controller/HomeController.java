@@ -1,5 +1,6 @@
 package com.zamunda.cinema.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.zamunda.cinema.model.Film;
 import com.zamunda.cinema.model.Hall;
+import com.zamunda.cinema.model.Seat;
 import com.zamunda.cinema.repository.ReservationRepository;
 import com.zamunda.cinema.service.UserService;
 
@@ -52,4 +54,26 @@ public class HomeController {
 
 		return "edit/prizeTable";
 	}
+	
+	@RequestMapping(value = "/projection", method = RequestMethod.GET)
+	public String getHall(Model model){
+		List<ArrayList<Seat>> seats = new ArrayList<ArrayList<Seat>>();
+		for(int i = 1; i<= 15; i=i+5){
+			ArrayList<Seat> rows = new ArrayList<Seat>();
+			rows.add(new Seat(i,  (i/5) + 1, i%5, 1));
+			rows.add(new Seat(i+1,(i/5) + 1, i%5, 1));
+			rows.add(new Seat(i+2,(i/5) + 1, i%5, 1));
+			rows.add(new Seat(i+3,(i/5) + 1, i%5, 2));
+			rows.add(new Seat(i+4,(i/5) + 1, i%5, 1));
+			seats.add(rows);
+		}	
+		model.addAttribute("seats", seats);
+		return "projection";
+	}
+
+	@RequestMapping(value = "/takeSeats", method = RequestMethod.POST)
+	public String takeSeats(Model model) {
+		return "displayFilm";
+	}
+
 }

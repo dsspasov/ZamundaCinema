@@ -1,0 +1,20 @@
+td{
+	width:30px;
+	height:30px;	
+}
+
+.taken{
+	width:30px;
+	height:42px;
+	border:1px solid black;
+	background-color:red;
+	margin-top:0px;
+}
+
+.free{
+	width:30px;
+	height:42px;
+	border:1px solid black;
+	background-color:green;
+	margin-top:0px;
+}

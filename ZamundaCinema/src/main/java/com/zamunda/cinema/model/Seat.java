@@ -6,6 +6,13 @@ public class Seat {
 	private int column;
 	private int status;
 
+	public Seat(long id, int row, int column, int status){
+		this.id = id;
+		this.row = row;
+		this.column = column;
+		this.status = status;
+	}
+	
 	public int getRow() {
 		return row;
 	}

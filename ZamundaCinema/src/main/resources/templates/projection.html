@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	th:include="layout :: page(curr='home')">
+<!-- 	this is the param wich is like id of the page -->
+<head>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div th:fragment="title">
+				<h2>Projection</h2>
+			</div>
+		</header>
+
+		<div th:fragment="content">
+		
+			<h1>Projection</h1>
+			<form th:action="@{/home/takeSeats}" method="post" id="form_seats">
+			<table id="seats">
+				<tr th:each="row: ${seats}">
+					<td th:each="seat:${row}">
+					
+					<div th:switch="${seat.status}">
+						<div th:case="'1'">
+							<div class="free">
+								<!-- <span th:text="${seat.status}"></span> -->
+								<input type="checkbox" th:id="${seat.id}"/>
+							</div>
+							
+						</div>
+						
+						<div th:case="'2'">
+							<div class="taken">
+<!-- 								<span th:text="${seat.status}"></span>
+ -->						</div>
+ 						
+							
+						</div>
+						
+						
+					</div>
+					</td>
+				</tr>		
+			</table>
+				<button type="button" onclick="save();">Save</button>
+			</form>
+			
+		</div>
+	</div>
+
+
+	<div th:fragment="scripts">
+		<script>
+		(function(w, $) {
+				window.save = function() {
+					console.log('echo');
+					var form = $("#form_seats");
+					cosole.log(form);
+					var checkboxes = $(form).closest('form').find(':checkbox');
+				
+					var checked = [];
+					for(var element: checkboxes){
+						if(element.checked){
+							checked.push($(this).attr('id'));   
+					    	console.log(checked);
+						}
+					}		
+					
+					//form.submit();
+
+				};
+			})(window, jQuery);
+		
+		
+		
+
+		
+		</script>
+	</div>
+</body>
+</html>
